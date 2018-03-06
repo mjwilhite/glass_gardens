@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
 	def index
-		@events = ["Carbondale Farmer's Market", "Mattie Jo's Glass Gardens party", "Carbondale Farmer's Market", "Jackson Farmer's Market"]
+		@events = Event.all
  	end
+
+	def show
+		@event = Event.find(params[:id])
+	end
 end
